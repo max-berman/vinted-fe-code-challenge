@@ -25,6 +25,22 @@
 	color: var(--brand-grey-dark);
 	text-align: center;
 	padding-bottom: var(--spacer);
+	font-family: var(--font-family-monospace);
+}
+
+.App .alert-error {
+	background-color: var(--alert-error);
+	color: var(--brand-white);
+	font-size: var(--font-size-small);
+	text-align: center;
+	font-family: var(--font-family-monospace);
+}
+
+.App .alert-warning {
+}
+.App .alert-info {
+}
+.App .alert-success {
 }
 
 /* Small devices (portrait mostly phones, 578px and down) */

@@ -1,35 +1,30 @@
 import React, { useState, useEffect } from 'react'
+import API from './configData.json'
 import './styles/global.css'
 import './App.css'
 import useInfiniteScroll from './hooks/UseInfiniteScroll'
+import Card from './components/Card'
 
-const urlParams = {
-	api_key: '879dc778faa8db7a5cf203819045e10e',
-	method: 'flickr.photos.search',
-	tags: 'retro,vintage',
-	tag_mode: 'all',
-	content_type: 3,
-	per_page: 50,
-	format: 'json',
-	nojsoncallback: 1,
-	sort: 'relevance',
-	page: 1,
-}
-
-const Photo = ({ title, id, secret, server }) => {
-	return (
-		<img
-			alt={`${title}`}
-			src={`https://live.staticflickr.com/${server}/${id}_${secret}.jpg`}
-		/>
-	)
-}
+const { url, params } = API
+const qs = new URLSearchParams(params)
 
 function App() {
-	const [photosData, setPhotosData] = useState([])
-	const [page, setPage] = useState(urlParams.page)
 	const [isFetching, setIsFetching] = useInfiniteScroll(fetchMore)
-	const [resErrorMessage, setResErrorMessage] = useState('')
+	const [errorMessage, setErrorMessage] = useState('')
+	const [photosData, setPhotosData] = useState([])
+	const [noMore, setNoMore] = useState(false)
+	const [page, setPage] = useState(1)
+
+	const loadingTextInit = errorMessage
+		? 'Problem fetching photos'
+		: 'Fetching photos ...'
+
+	const loadingTextMore = noMore
+		? 'No more photos :('
+		: 'Fetching more photos ...'
+
+	const loadingText =
+		photosData.length === 0 ? loadingTextInit : loadingTextMore
 
 	function fetchMore() {
 		setPage((prev) => prev + 1)
@@ -38,17 +33,19 @@ function App() {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			urlParams.page = page
-			const qs = new URLSearchParams(urlParams)
-			const API_URL = `https://api.flickr.com/services/rest/?${qs}`
+			qs.set('page', page)
 			try {
-				const res = await fetch(API_URL)
+				const res = await fetch(`${url}${qs}`)
 				const data = await res.json()
-				console.log(data.photos.photo)
-				setPhotosData((prev) => [...prev, ...data.photos.photo])
-			} catch (err) {
-				console.log(err)
-				setResErrorMessage(err)
+				if (res.ok && data.stat === 'ok') {
+					setPhotosData((prev) => [...prev, ...data.photos.photo])
+					setNoMore(data.photos.photo.length === 0)
+					return
+				}
+				throw new Error(data.message)
+			} catch (error) {
+				console.log(error)
+				setErrorMessage(error.message)
 			}
 		}
 		fetchData()
@@ -56,14 +53,13 @@ function App() {
 
 	return (
 		<div className='App'>
+			{!!errorMessage && <div className='alert-error'>{errorMessage}</div>}
 			<ul>
-				{photosData.map(({ id, server, secret, title }, i) => (
-					<li key={i} className='card'>
-						<Photo {...{ title, id, secret, server }} />
-					</li>
+				{photosData.map((data, i) => (
+					<Card key={`${i}-${data?.id}`} {...data} />
 				))}
 			</ul>
-			{!isFetching && <div className='loader'>Fetching photos ...</div>}
+			{!isFetching && <div className='loader'>{loadingText}</div>}
 		</div>
 	)
 }

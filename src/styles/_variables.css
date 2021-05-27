@@ -5,8 +5,10 @@
 	--brand-grey-dimmed: #fafafa;
 	--brand-white: #fff;
 
-	--font-family-base: 'Fira Code', 'Fira Mono', Menlo, Monaco, Consolas,
-		'Courier New', monospace;
+	--alert-error: rgb(211, 62, 62);
+
+	--font-family-base: 'Sharp Sans', -apple-system, BlinkMacSystemFont,
+		'Segoe UI', Helvetica, Arial, sans-serif;
 
 	--font-family-monospace: 'Fira Code', 'Fira Mono', Menlo, Monaco, Consolas,
 		'Courier New', monospace;

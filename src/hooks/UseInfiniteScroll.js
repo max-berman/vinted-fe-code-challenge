@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { debounce } from '../utils/debounce'
+import debounce from '../utils/debounce'
 
 const useInfiniteScroll = (callback) => {
 	const [isFetching, setIsFetching] = useState(false)
