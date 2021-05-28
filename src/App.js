@@ -3,6 +3,7 @@ import API from './configData.json'
 import './styles/global.css'
 import './App.css'
 import useInfiniteScroll from './hooks/UseInfiniteScroll'
+import useStickyState from './hooks/useStickyState'
 import Card from './components/Card'
 
 const { url, params } = API
@@ -10,6 +11,7 @@ const qs = new URLSearchParams(params)
 
 function App() {
 	const [isFetching, setIsFetching] = useInfiniteScroll(fetchMore)
+	const [likedItems, setLikedItems] = useStickyState([])
 	const [errorMessage, setErrorMessage] = useState('')
 	const [photosData, setPhotosData] = useState([])
 	const [noMore, setNoMore] = useState(false)
@@ -56,7 +58,10 @@ function App() {
 			{!!errorMessage && <div className='alert-error'>{errorMessage}</div>}
 			<ul>
 				{photosData.map((data, i) => (
-					<Card key={`${i}-${data?.id}`} {...data} />
+					<Card
+						key={`${i}-${data?.id}`}
+						{...{ likedItems, setLikedItems, ...data }}
+					/>
 				))}
 			</ul>
 			{!isFetching && <div className='loader'>{loadingText}</div>}

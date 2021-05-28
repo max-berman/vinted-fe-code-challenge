@@ -57,26 +57,33 @@
 }
 .star {
 	position: absolute;
-	background-color: #ff9800;
-	transform: rotate(315deg);
-	right: -34px;
-	top: -34px;
+	right: -32px;
+	top: -32px;
+	background-color: var(--brand-grey-dark);
+	transform: rotate(45deg);
 	display: flex;
 	width: calc(var(--spacer) * 2);
 	height: calc(var(--spacer) * 2);
 	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
 }
 .star i {
 	font-style: normal;
 	display: inline-block;
 	color: #fff;
-	transform: rotate(45deg);
-	font-size: var(--font-size-h2);
-	line-height: 1;
+	font-size: var(--font-size-large);
+	line-height: 1.4;
 }
 .action:hover {
 	box-shadow: inset 0 0 0 1px var(--brand-grey-dark);
 	color: var(--brand-grey-dark);
 	background-color: var(--brand-grey);
 	cursor: pointer;
+}
+@media screen and (max-width: 576px) and (orientation: portrait) {
+	.star i {
+		font-size: var(--font-size-title);
+		line-height: 1;
+	}
 }

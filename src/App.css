@@ -36,12 +36,12 @@
 	font-family: var(--font-family-monospace);
 }
 
-.App .alert-warning {
+/* .App .alert-warning {
 }
 .App .alert-info {
 }
 .App .alert-success {
-}
+} */
 
 /* Small devices (portrait mostly phones, 578px and down) */
 @media screen and (max-width: 576px) and (orientation: portrait) {
