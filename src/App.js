@@ -11,18 +11,18 @@ const qs = new URLSearchParams(params)
 
 function App() {
 	const [isFetching, setIsFetching] = useInfiniteScroll(fetchMore)
-	const [likedItems, setLikedItems] = useStickyState([])
+	const [likedItems, setLikedItems] = useStickyState([], 'likedPhotos')
 	const [errorMessage, setErrorMessage] = useState('')
 	const [photosData, setPhotosData] = useState([])
 	const [noMore, setNoMore] = useState(false)
 	const [page, setPage] = useState(1)
 
 	const loadingTextInit = errorMessage
-		? 'Problem fetching photos'
+		? 'Problem fetching photos :('
 		: 'Fetching photos ...'
 
 	const loadingTextMore = noMore
-		? 'No more photos :('
+		? 'No more photos!'
 		: 'Fetching more photos ...'
 
 	const loadingText =
@@ -56,14 +56,16 @@ function App() {
 	return (
 		<div className='App'>
 			{!!errorMessage && <div className='alert-error'>{errorMessage}</div>}
-			<ul>
-				{photosData.map((data, i) => (
-					<Card
-						key={`${i}-${data?.id}`}
-						{...{ likedItems, setLikedItems, ...data }}
-					/>
-				))}
-			</ul>
+			{!!photosData && (
+				<ul>
+					{photosData.map((data, i) => (
+						<Card
+							key={`${i}-${data?.id}`}
+							{...{ likedItems, setLikedItems, ...data }}
+						/>
+					))}
+				</ul>
+			)}
 			{!isFetching && <div className='loader'>{loadingText}</div>}
 		</div>
 	)
