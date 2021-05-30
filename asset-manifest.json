@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/vinted-fe-code-challenge/static/css/main.501d413d.chunk.css",
-    "main.js": "/vinted-fe-code-challenge/static/js/main.ebe82cd3.chunk.js",
-    "main.js.map": "/vinted-fe-code-challenge/static/js/main.ebe82cd3.chunk.js.map",
-    "runtime-main.js": "/vinted-fe-code-challenge/static/js/runtime-main.2911b105.js",
-    "runtime-main.js.map": "/vinted-fe-code-challenge/static/js/runtime-main.2911b105.js.map",
-    "static/js/2.508e11de.chunk.js": "/vinted-fe-code-challenge/static/js/2.508e11de.chunk.js",
-    "static/js/2.508e11de.chunk.js.map": "/vinted-fe-code-challenge/static/js/2.508e11de.chunk.js.map",
-    "static/js/3.8f35569f.chunk.js": "/vinted-fe-code-challenge/static/js/3.8f35569f.chunk.js",
-    "static/js/3.8f35569f.chunk.js.map": "/vinted-fe-code-challenge/static/js/3.8f35569f.chunk.js.map",
+    "main.css": "/vinted-fe-code-challenge/static/css/main.5880d025.chunk.css",
+    "main.js": "/vinted-fe-code-challenge/static/js/main.a30466db.chunk.js",
+    "main.js.map": "/vinted-fe-code-challenge/static/js/main.a30466db.chunk.js.map",
+    "runtime-main.js": "/vinted-fe-code-challenge/static/js/runtime-main.7a16f956.js",
+    "runtime-main.js.map": "/vinted-fe-code-challenge/static/js/runtime-main.7a16f956.js.map",
+    "static/js/2.40ad1896.chunk.js": "/vinted-fe-code-challenge/static/js/2.40ad1896.chunk.js",
+    "static/js/2.40ad1896.chunk.js.map": "/vinted-fe-code-challenge/static/js/2.40ad1896.chunk.js.map",
+    "static/js/3.78c44dfe.chunk.js": "/vinted-fe-code-challenge/static/js/3.78c44dfe.chunk.js",
+    "static/js/3.78c44dfe.chunk.js.map": "/vinted-fe-code-challenge/static/js/3.78c44dfe.chunk.js.map",
     "index.html": "/vinted-fe-code-challenge/index.html",
-    "static/css/main.501d413d.chunk.css.map": "/vinted-fe-code-challenge/static/css/main.501d413d.chunk.css.map",
-    "static/js/2.508e11de.chunk.js.LICENSE.txt": "/vinted-fe-code-challenge/static/js/2.508e11de.chunk.js.LICENSE.txt"
+    "static/css/main.5880d025.chunk.css.map": "/vinted-fe-code-challenge/static/css/main.5880d025.chunk.css.map",
+    "static/js/2.40ad1896.chunk.js.LICENSE.txt": "/vinted-fe-code-challenge/static/js/2.40ad1896.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.2911b105.js",
-    "static/js/2.508e11de.chunk.js",
-    "static/css/main.501d413d.chunk.css",
-    "static/js/main.ebe82cd3.chunk.js"
+    "static/js/runtime-main.7a16f956.js",
+    "static/js/2.40ad1896.chunk.js",
+    "static/css/main.5880d025.chunk.css",
+    "static/js/main.a30466db.chunk.js"
   ]
 }
