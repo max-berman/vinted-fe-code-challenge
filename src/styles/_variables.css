@@ -6,6 +6,9 @@
 	--brand-white: #fff;
 
 	--alert-error: rgb(211, 62, 62);
+	--alert-warning: #d3772b;
+	--alert-info: #8bb6d3;
+	--alert-success: #8bd395;
 
 	--font-family-base: 'Sharp Sans', -apple-system, BlinkMacSystemFont,
 		'Segoe UI', Helvetica, Arial, sans-serif;

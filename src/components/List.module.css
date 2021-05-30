@@ -1,0 +1,21 @@
+.list {
+	padding: calc(var(--spacer) / 2);
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+/* Small devices (portrait mostly phones, 578px and down) */
+@media screen and (max-width: 576px) and (orientation: portrait) {
+	.list {
+		padding: calc(var(--spacer) / 4);
+		flex-direction: column;
+	}
+}
+/* Small devices (portrait mostly phones, 578px and up) */
+@media screen and (min-width: 576px) and (orientation: portrait) {
+	.list {
+		padding: calc(var(--spacer) / 3);
+		flex-direction: row;
+	}
+}

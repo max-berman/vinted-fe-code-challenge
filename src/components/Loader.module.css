@@ -1,0 +1,6 @@
+.loader {
+	color: var(--brand-grey-dark);
+	text-align: center;
+	padding-bottom: var(--spacer);
+	font-family: var(--font-family-monospace);
+}

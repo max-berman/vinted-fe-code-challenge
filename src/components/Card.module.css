@@ -1,5 +1,11 @@
 .card {
 	position: relative;
+	margin: calc(var(--spacer) / 2);
+	height: calc(100vh / 3.5);
+	display: flex;
+	border-radius: var(--border-radius);
+	box-shadow: 2px 2px 0 0 #d1d3d2;
+	overflow: hidden;
 }
 .shared {
 	position: absolute;
@@ -42,19 +48,6 @@
 	border-top: 1px solid var(--brand-white);
 	border-bottom: 1px solid var(--brand-white);
 }
-.action {
-	margin-top: calc(var(--spacer) / 2);
-	color: var(--brand-white);
-	font-size: var(--font-size-large);
-	background: none;
-	padding: calc(var(--spacer) / 6) calc(var(--spacer) / 2);
-	border-radius: calc(var(--border-radius) * 5);
-	border: 1px solid var(--brand-white);
-}
-.liked {
-	color: var(--brand-grey-dark);
-	background-color: var(--brand-grey);
-}
 .star {
 	position: absolute;
 	right: -32px;
@@ -75,15 +68,36 @@
 	font-size: var(--font-size-large);
 	line-height: 1.4;
 }
-.action:hover {
-	box-shadow: inset 0 0 0 1px var(--brand-grey-dark);
-	color: var(--brand-grey-dark);
-	background-color: var(--brand-grey);
-	cursor: pointer;
-}
+
+/* Small devices (portrait mostly phones, 578px and down) */
 @media screen and (max-width: 576px) and (orientation: portrait) {
+	.card {
+		height: calc(100vh / 3);
+		margin: calc(var(--spacer) / 4);
+		width: calc((100%) - (var(--spacer) / 2));
+	}
 	.star i {
 		font-size: var(--font-size-title);
 		line-height: 1;
+	}
+}
+/* Small devices (portrait mostly phones, 578px and up) */
+@media screen and (min-width: 576px) and (orientation: portrait) {
+	.card {
+		margin: calc(var(--spacer) / 3);
+		width: calc((100% / 2) - (var(--spacer) / 1.5));
+	}
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+	.card {
+		height: calc(100vh / 4);
+		width: calc((100% / 3) - var(--spacer));
+	}
+}
+/* Large devices (large laptops and desktops, 1140px and up) */
+@media only screen and (min-width: 1140px) {
+	.card {
+		width: calc((100% / 4) - (var(--spacer)));
 	}
 }

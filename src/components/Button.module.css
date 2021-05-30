@@ -1,0 +1,18 @@
+.button {
+	margin-top: calc(var(--spacer) / 2);
+	color: var(--brand-white);
+	font-size: var(--font-size-large);
+	background: none;
+	padding: calc(var(--spacer) / 6) calc(var(--spacer) / 2);
+	border-radius: calc(var(--border-radius) * 5);
+	border: 1px solid var(--brand-white);
+}
+.active {
+	color: var(--brand-grey-dark);
+	background-color: var(--brand-grey);
+}
+.button:hover {
+	compose: active;
+	box-shadow: inset 0 0 0 1px var(--brand-grey-dark);
+	cursor: pointer;
+}

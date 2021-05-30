@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import s from './Card.module.css'
+import style from './Card.module.css'
+import Button from './Button'
 import API from '../configData.json'
 const { imageUrl } = API
 
@@ -12,10 +13,9 @@ function Card({
 	setLikedItems,
 	likedItems,
 }) {
-	const [isMetaShown, setIsMetaShown] = useState(false)
+	const [isInfoShown, setIsInfoShown] = useState(false)
 	const imgSrc = `${imageUrl}${server}/${id}_${secret}.jpg`
 	const isLiked = likedItems.some((it) => it === id)
-	const btnClasses = isLiked ? `${s.action} ${s.liked}` : s.action
 
 	function handleLike() {
 		setLikedItems((prev) => {
@@ -27,24 +27,31 @@ function Card({
 
 	return (
 		<li
-			className={s.card}
-			onMouseEnter={() => setIsMetaShown(true)}
-			onMouseLeave={() => setIsMetaShown(false)}
+			className={style.card}
+			onMouseEnter={() => setIsInfoShown(true)}
+			onMouseLeave={() => setIsInfoShown(false)}
 		>
-			<div className={s.media} style={{ backgroundImage: `url(${imgSrc})` }} />
+			<div
+				className={style.media}
+				style={{ backgroundImage: `url(${imgSrc})` }}
+			/>
 			{isLiked && (
-				<div className={s.star}>
+				<div className={style.star}>
 					<i>&#10084;</i>
 				</div>
 			)}
-			{isMetaShown && (
-				<section className={s.content}>
+			{isInfoShown && (
+				<section className={style.content}>
 					<strong title={title}>{title}</strong>
 					<hr />
 					<em>{ownername}</em>
-					<button className={btnClasses} onClick={handleLike}>
-						{isLiked ? `Dislike` : `Like`}
-					</button>
+					<Button
+						{...{
+							handleLike,
+							label: isLiked ? `Dislike` : `Like`,
+							isActive: isLiked,
+						}}
+					/>
 				</section>
 			)}
 		</li>

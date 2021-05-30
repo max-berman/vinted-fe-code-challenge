@@ -1,0 +1,25 @@
+.alert {
+	font-size: var(--font-size-small);
+	text-align: center;
+	font-family: var(--font-family-monospace);
+}
+.error {
+	compose: alert;
+	background-color: var(--alert-error);
+	color: var(--brand-white);
+}
+.warning {
+	compose: alert;
+	color: var(--brand-white);
+	background-color: var(--alert-warning);
+}
+.info {
+	compose: alert;
+	color: var(--brand-white);
+	background-color: var(--alert-info);
+}
+.success {
+	compose: alert;
+	color: var(--brand-white);
+	background-color: var(--alert-success);
+}
