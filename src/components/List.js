@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import API from '../configData.json'
-import useInfiniteScroll from '../hooks/UseInfiniteScroll'
+import useInfiniteScroll from '../hooks/useInfiniteScroll'
 import useStickyState from '../hooks/useStickyState'
 import style from './List.module.css'
 import Card from './Card'
