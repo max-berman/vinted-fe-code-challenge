@@ -3,10 +3,10 @@
 ### Requirements
 
 - [x] Leverage [Flickr API](https://www.flickr.com/services/api/flickr.photos.getRecent.html)
-- [x] Design should be recreated as closely as possible.
-- [x] Responsive design with three breakpoints for Desktop, Tablet, Phone.
-- [x] Infinite scroll.
-- [x] Keep liked photo data persistent with page reload.
+- [x] Design should be recreated as closely as possible
+- [x] Responsive design with three breakpoints for Desktop, Tablet, Phone
+- [x] Infinite scroll
+- [x] Keep liked photo data persistent with page reload
 - [x] Use React
 - [x] No External libraries beside React
 
