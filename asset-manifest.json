@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/vinted-fe-code-challenge/static/css/main.5880d025.chunk.css",
-    "main.js": "/vinted-fe-code-challenge/static/js/main.a30466db.chunk.js",
-    "main.js.map": "/vinted-fe-code-challenge/static/js/main.a30466db.chunk.js.map",
+    "main.js": "/vinted-fe-code-challenge/static/js/main.f2454825.chunk.js",
+    "main.js.map": "/vinted-fe-code-challenge/static/js/main.f2454825.chunk.js.map",
     "runtime-main.js": "/vinted-fe-code-challenge/static/js/runtime-main.7a16f956.js",
     "runtime-main.js.map": "/vinted-fe-code-challenge/static/js/runtime-main.7a16f956.js.map",
     "static/js/2.40ad1896.chunk.js": "/vinted-fe-code-challenge/static/js/2.40ad1896.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.7a16f956.js",
     "static/js/2.40ad1896.chunk.js",
     "static/css/main.5880d025.chunk.css",
-    "static/js/main.a30466db.chunk.js"
+    "static/js/main.f2454825.chunk.js"
   ]
 }
