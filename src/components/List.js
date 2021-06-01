@@ -56,9 +56,12 @@ function List() {
 
 	return (
 		<>
-			<ErrorMessage {...{ errorMessage, type: 'error' }} />
-			{!!photosData && (
-				<ul className={style.list}>
+			<ErrorMessage
+				data-testid='fetch-error'
+				{...{ errorMessage, type: 'error' }}
+			/>
+			{photosData.length > 0 && (
+				<ul className={style.list} data-testid='fetch-list'>
 					{photosData.map((data, i) => (
 						<Card
 							key={`${i}-${data?.id}`}
