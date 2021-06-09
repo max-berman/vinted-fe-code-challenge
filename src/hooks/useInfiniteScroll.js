@@ -5,7 +5,7 @@ const useInfiniteScroll = (callback) => {
 	const [isFetching, setIsFetching] = useState(false)
 
 	useEffect(() => {
-		const debounceHandleScroll = debounce(handleScroll, 1000)
+		const debounceHandleScroll = debounce(handleScroll, 500, false)
 		window?.addEventListener('scroll', debounceHandleScroll)
 		return () => {
 			window?.removeEventListener('scroll', debounceHandleScroll)
